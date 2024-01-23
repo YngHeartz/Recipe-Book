@@ -6,7 +6,7 @@ function RecipeInput() {
     const addRecipe = (e) => {
         const enteredRecipe = e.target.previousElementSibling.value;
         setRecipe(enteredRecipe);
-        
+
         e.target.previousElementSibling.value = "";
 
         if (enteredRecipe === "") {
@@ -30,9 +30,12 @@ function RecipeInput() {
                     Add Recipe
                 </button>
             </div>
-            <div>
-                <h1>{recipe}</h1>
-            </div>
+            <h1 className="text-center text-3xl mt-9 font-bold">Recipes Collection</h1>
+            <div className="card mt-4 p-4 border rounded-md shadow-lg w">
+            <h1 className="text-3xl font-semibold size-28 shadow-gray-600 text-center mb-4  ">
+                {recipe}
+            </h1>
+        </div>
         </>
     );
 }
