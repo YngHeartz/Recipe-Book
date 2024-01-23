@@ -1,20 +1,40 @@
 import React, { useState } from "react";
 
-function RecipeInput(){
+function RecipeInput() {
+    const [recipe, setRecipe] = useState("");
 
-    const [recipe, setRecipe] = useState()
-    
-    const AddRecipe = (e) => {
-        setRecipe(e.target.value)
+    const addRecipe = (e) => {
+        const enteredRecipe = e.target.previousElementSibling.value;
+        setRecipe(enteredRecipe);
+        
+        e.target.previousElementSibling.value = "";
+
+        if (enteredRecipe === "") {
+            alert("Nothing has been entered");
+        }
     }
 
-    return(
+    return (
         <>
-        <div className="text-center mt-20">
-            <input type="text" placeholder="Recipe Name" className="size-9 w-auto text-center border-s" />
-            <button className="ml-10 text-white p-2 bg-black rounded-sm hover:bg-pink-300 hover:text-white hover:font-bold transition duration-500">Add Recipe</button>
-        </div>
+            <div className="text-center mt-20">
+                <input
+                    type="text"
+                    placeholder="Recipe Name"
+                    className="size-9 w-auto text-center border-s"
+                    onChange={() => {}} 
+                />
+                <button
+                    className="ml-10 text-white p-2 bg-black rounded-sm hover:bg-pink-300 hover:text-white hover:font-bold transition duration-500"
+                    onClick={addRecipe}
+                >
+                    Add Recipe
+                </button>
+            </div>
+            <div>
+                <h1>{recipe}</h1>
+            </div>
         </>
     );
 }
-export default RecipeInput
+
+export default RecipeInput;
