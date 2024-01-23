@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
 function RecipeInput() {
+    // State Variables
     const [recipe, setRecipe] = useState("");
 
+    // logic to add the recipe information
     const addRecipe = (e) => {
         const enteredRecipe = e.target.previousElementSibling.value;
         setRecipe(enteredRecipe);
 
+        // Resets the input field title to be an empty string
         e.target.previousElementSibling.value = "";
 
+        // alerts the user that they are not entering any acceptable data
         if (enteredRecipe === "") {
             alert("Nothing has been entered");
         }
