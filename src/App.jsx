@@ -18,9 +18,9 @@ function App() {
 
   return (
     <>
-      {/* <Header />
-      <RecipeInput /> */}
-      <CardDefault />
+      <Header />
+      <RecipeInput />
+      {/* <CardDefault /> */}
 
       {/* <RecipeContainer /> */}
     </>
