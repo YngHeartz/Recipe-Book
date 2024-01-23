@@ -3,7 +3,9 @@ import { useState } from 'react'
 //main Imports End
 
 //component Import start
-import RecipeManager from './components/RecipeManager'
+import RecipeInput from './components/recipeinput'
+import Header from './components/header'
+import RecipeContainer from './components/recipecontainer'
 //component Import End
 
 //style imports
@@ -15,7 +17,9 @@ function App() {
 
   return (
     <>
-      <RecipeManager />
+      <Header />
+      <RecipeInput />
+      <RecipeContainer />
     </>
   )
 }
