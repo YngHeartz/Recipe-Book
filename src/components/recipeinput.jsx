@@ -16,13 +16,16 @@ function RecipeInput() {
 
     return (
         <>
+        {/* Container for Input field, button */}
             <div className="text-center mt-20">
+                {/* Input Field for recipe Information */}
                 <input
                     type="text"
                     placeholder="Recipe Name"
                     className="size-9 w-auto text-center border-s"
                     onChange={() => {}} 
                 />
+                {/* Add Recipe Button */}
                 <button
                     className="ml-10 text-white p-2 bg-black rounded-sm hover:bg-pink-300 hover:text-white hover:font-bold transition duration-500"
                     onClick={addRecipe}
@@ -30,8 +33,13 @@ function RecipeInput() {
                     Add Recipe
                 </button>
             </div>
+            {/* Recipe Collections Header */}
             <h1 className="text-center text-3xl mt-9 font-bold">Recipes Collection</h1>
-            <h1>{recipe}</h1>
+            
+            {/* Where the Recipe output will be */}
+            <div className="recipecard">
+                <h1>{recipe}</h1>
+            </div>            
         </>
     );
 }
