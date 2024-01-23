@@ -31,7 +31,7 @@ function RecipeInput() {
                 />
                 {/* Add Recipe Button */}
                 <button
-                    className="ml-10 text-white p-2 bg-black rounded-sm hover:bg-pink-300 hover:text-white hover:font-bold transition duration-500"
+                    className="ml-10 text-white p-2 bg-black rounded-sm font-bold hover:bg-pink-300 hover:text-white  transition duration-500"
                     onClick={addRecipe}
                 >
                     Add Recipe
