@@ -5,6 +5,7 @@ import { useState } from 'react'
 //component Import start
 import RecipeInput from './components/recipeinput'
 import Header from './components/header'
+import RecipeContainer from './components/recipecontainer'
 //component Import End
 
 //style imports
@@ -18,6 +19,7 @@ function App() {
     <>
       <Header />
       <RecipeInput />
+      <RecipeContainer />
     </>
   )
 }
