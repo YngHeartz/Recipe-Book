@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function RecipeInput() {
     // State Variables
     const [recipe, setRecipe] = useState("");
+    const [image, setImage] = useState();
 
     // logic to add the recipe information
     const addRecipe = (e) => {
@@ -29,6 +30,7 @@ function RecipeInput() {
                     className="size-9 w-auto text-center border-s"
                     onChange={() => {}} 
                 />
+                <input type="file" placeholder="Image" />
                 {/* Add Recipe Button */}
                 <button
                     className="ml-10 text-white p-2 bg-black rounded-sm font-bold hover:bg-pink-300 hover:text-white  transition duration-500"
