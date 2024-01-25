@@ -41,31 +41,28 @@ function RecipeInput() {
     return (
         <>
             {/* Container for Input field, button */}
-            <div className="text-center mt-20  text-2xl">
+            <div className="text-center mt-20  text-2xl mb-10">
                 {/* Form for adding recipe information */}
                 <form onSubmit={addRecipeInformation}>
                     {/* Input Field for recipe Name */}
                     <input
                         type="text"
                         placeholder="Recipe Name"
-                        className="size-9 w-auto text-center border-2 hover:border-pink-500   focus:border-pink-500 rounded-md p-2"
+                        className="size-9 w-auto text-center border-2 hover:border-pink-300 rounded-md p-10 mb-10 cursor-pointer"
                     /><br />
                     {/* File input for image */}
                     <input
                         type="file"
                         onChange={handleImageChange}
                         accept="image/*"
-                        className="text-sm text-stone-500
-                        file:mr-5 file:py-1 file:px-3 file:border-[1px]
-                        file:text-xs file:font-medium
-                        file:bg-stone-50 file:text-stone-700
-                        hover:file:cursor-pointer 
-                        hover:file:text-pink-700
-                        file:rounded-md file:text-2xl mt-5 mb-2"                    /><br />
+                        className=" mb-10
+                        file:bg-transparent file:border-transparent
+                        file:cursor-pointer
+                        hover:file:text-pink-300"      /><br />
                     <input
                         type="text"
                         placeholder="Recipe Details"
-                        className="mt-4 border-2 border-pink-500 rounded-md p-2"
+                        className="size-9 w-auto text-center border-2 hover:border-pink-300  rounded-md p-10 mb-10 cursor-pointer"
                     /><br />
                     {/* Add Recipe Button */}
                     <button
@@ -116,7 +113,7 @@ function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }
                 </Typography>
                 <Button
                     onClick={() => setExpanded(!expanded)}
-                    className="bg-black text-white font-semibold rounded-md   w-auto p-3 ml-0"
+                    className="bg-black text-white font-semibold rounded-md   w-auto p-3 mt-5 "
                 >
                     {expanded ? "Read Less" : "Read More"}
                 </Button><br />
