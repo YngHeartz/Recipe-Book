@@ -6,6 +6,7 @@ import { useState } from 'react'
 import RecipeInput from './components/recipeinput'
 // import RecipeContainer from './components/recipecontainer'
 import CardDefault from './components/cardtester'
+import Navbar from './components/navbar'
 //component Import End
 
 //style imports
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <RecipeInput />
       {/* <CardDefault /> */}
 

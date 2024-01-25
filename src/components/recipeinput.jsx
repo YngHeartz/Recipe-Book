@@ -95,7 +95,7 @@ function RecipeInput() {
 function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }) {
 
     return (
-        <Card className="mt-6 w-96 border border-gray-300 rounded-md overflow-hidden text-2xl">
+        <Card className="mt-6 w-96 border border-gray-300 rounded-md overflow-hidden text-2xl ml-40">
             <CardHeader color="blue-gray" className="relative h-40">
                 <img
                     src={image ? URL.createObjectURL(image) : ""}
