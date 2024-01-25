@@ -31,9 +31,6 @@ function RecipeInput() {
         const enteredRecipeName = e.target.querySelector('input[type="text"]').value;
         setRecipeName(enteredRecipeName);
 
-        const recipeDetails = e.target.querySelector('input[type="text"]').value;
-        setRecipeName(recipeDetails);
-
         // Reset the input field for the recipe name
         e.target.querySelector('input[type="text"]').value = "";
 
@@ -58,8 +55,13 @@ function RecipeInput() {
                         type="file"
                         onChange={handleImageChange}
                         accept="image/*"
-                        className="mt-4 border-2 border-pink-500 rounded-md p-2"
-                    /><br />
+                        className="text-sm text-stone-500
+                        file:mr-5 file:py-1 file:px-3 file:border-[1px]
+                        file:text-xs file:font-medium
+                        file:bg-stone-50 file:text-stone-700
+                        hover:file:cursor-pointer 
+                        hover:file:text-pink-700
+                        file:rounded-md file:text-2xl mt-5 mb-2"                    /><br />
                     <input
                         type="text"
                         placeholder="Recipe Details"
@@ -96,7 +98,7 @@ function RecipeInput() {
 function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }) {
 
     return (
-        <Card className="mt-6 w-96 border border-gray-300 rounded-md overflow-hidden">
+        <Card className="mt-6 w-96 border border-gray-300 rounded-md overflow-hidden text-2xl">
             <CardHeader color="blue-gray" className="relative h-40">
                 <img
                     src={image ? URL.createObjectURL(image) : ""}
@@ -114,18 +116,18 @@ function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }
                 </Typography>
                 <Button
                     onClick={() => setExpanded(!expanded)}
-                    className="bg-black text-white font-semibold rounded-md  size-11 w-auto p-3 ml-0"
+                    className="bg-black text-white font-semibold rounded-md   w-auto p-3 ml-0"
                 >
                     {expanded ? "Read Less" : "Read More"}
                 </Button><br />
                 {/* Input field for editing recipe details */}
-                <input
+                {/* <input
                     type="text"
                     placeholder="Recipe Details"
                     value={recipeDetails}
                     onChange={(e) => setRecipeDetails(e.target.value)}
                     className=" size-9 w-auto text-center border-2 rounded-md p-2 mt-4"
-                />
+                /> */}
             </CardBody>
         </Card>
     );
