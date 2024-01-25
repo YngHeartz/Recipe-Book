@@ -31,6 +31,9 @@ function RecipeInput() {
         const enteredRecipeName = e.target.querySelector('input[type="text"]').value;
         setRecipeName(enteredRecipeName);
 
+        const recipeDetails = e.target.querySelector('input[type="text"]').value;
+        setRecipeName(recipeDetails);
+
         // Reset the input field for the recipe name
         e.target.querySelector('input[type="text"]').value = "";
 
@@ -41,7 +44,7 @@ function RecipeInput() {
     return (
         <>
             {/* Container for Input field, button */}
-            <div className="text-center mt-20">
+            <div className="text-center mt-20  text-2xl">
                 {/* Form for adding recipe information */}
                 <form onSubmit={addRecipeInformation}>
                     {/* Input Field for recipe Name */}
@@ -91,6 +94,7 @@ function RecipeInput() {
 }
 
 function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }) {
+
     return (
         <Card className="mt-6 w-96 border border-gray-300 rounded-md overflow-hidden">
             <CardHeader color="blue-gray" className="relative h-40">
@@ -104,6 +108,7 @@ function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }
                 <Typography variant="h5" color="blue-gray" className="mb-2">
                     {recipeName}
                 </Typography>
+                
                 <Typography>
                     {expanded ? recipeDetails : recipeDetails.substring(0, 50)}
                 </Typography>
@@ -125,5 +130,4 @@ function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }
         </Card>
     );
 }
-
 export default RecipeInput;
