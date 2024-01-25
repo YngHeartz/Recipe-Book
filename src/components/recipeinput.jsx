@@ -67,7 +67,7 @@ function RecipeInput() {
                     {/* Add Recipe Button */}
                     <button
                         type="submit"
-                        className="mt-5 text-white p-2 bg-black rounded-sm font-bold hover:bg-pink-300 hover:text-white transition duration-500"
+                        className="mt-5 text-white p-5 rounded-md bg-black  font-bold hover:bg-pink-300 hover:text-white transition duration-500"
                     >
                         Add Recipe
                     </button>
