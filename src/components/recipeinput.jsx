@@ -24,17 +24,15 @@ function RecipeInput() {
 
     // logic to add the recipe information
     const addRecipeInformation = (e) => {
-        const enteredRecipeName = e.target.previousElementSibling.value;
+        // Prevent the default form submission behavior
+        e.preventDefault();
+
+        // Retrieve the recipe name from the input field
+        const enteredRecipeName = e.target.querySelector('input[type="text"]').value;
         setRecipeName(enteredRecipeName);
 
-        // Resets the input field title to be an empty string
-        e.target.previousElementSibling.value = "";
-
-        // alerts the user that they are not entering any acceptable data
-        if (enteredRecipeName === "") {
-            alert("Nothing has been entered");
-            return;
-        }
+        // Reset the input field for the recipe name
+        e.target.querySelector('input[type="text"]').value = "";
 
         // Mark recipe as submitted
         setSubmitted(true);
@@ -44,25 +42,34 @@ function RecipeInput() {
         <>
             {/* Container for Input field, button */}
             <div className="text-center mt-20">
-                {/* Input Field for recipe Information */}
-                <input
-                    type="text"
-                    placeholder="Recipe Name"
-                    className="size-9 w-auto text-center border-s"
-                />
-                {/* File input for image */}
-                <input
-                    type="file"
-                    onChange={handleImageChange}
-                    accept="image/*"
-                />
-                {/* Add Recipe Button */}
-                <button
-                    className="ml-10 text-white p-2 bg-black rounded-sm font-bold hover:bg-pink-300 hover:text-white  transition duration-500"
-                    onClick={addRecipeInformation}
-                >
-                    Add Recipe
-                </button>
+                {/* Form for adding recipe information */}
+                <form onSubmit={addRecipeInformation}>
+                    {/* Input Field for recipe Name */}
+                    <input
+                        type="text"
+                        placeholder="Recipe Name"
+                        className="size-9 w-auto text-center border-2 hover:border-pink-500   focus:border-pink-500 rounded-md p-2"
+                    /><br />
+                    {/* File input for image */}
+                    <input
+                        type="file"
+                        onChange={handleImageChange}
+                        accept="image/*"
+                        className="mt-4 border-2 border-pink-500 rounded-md p-2"
+                    /><br />
+                    <input
+                        type="text"
+                        placeholder="Recipe Details"
+                        className="mt-4 border-2 border-pink-500 rounded-md p-2"
+                    /><br />
+                    {/* Add Recipe Button */}
+                    <button
+                        type="submit"
+                        className="mt-5 text-white p-2 bg-black rounded-sm font-bold hover:bg-pink-300 hover:text-white transition duration-500"
+                    >
+                        Add Recipe
+                    </button>
+                </form>
             </div>
             {/* Recipe Collections Header */}
             <h1 className="text-center text-3xl mt-9 font-bold">
@@ -102,14 +109,17 @@ function CardDefault({ recipeName, recipeDetails, image, expanded, setExpanded }
                 </Typography>
                 <Button
                     onClick={() => setExpanded(!expanded)}
-                    className="bg-black text-white font-semibold rounded-md ml-3 size-11 w-auto p-3"
+                    className="bg-black text-white font-semibold rounded-md  size-11 w-auto p-3 ml-0"
                 >
                     {expanded ? "Read Less" : "Read More"}
-                </Button>
+                </Button><br />
+                {/* Input field for editing recipe details */}
                 <input
                     type="text"
                     placeholder="Recipe Details"
-                    className="size-9 w-auto text-center border-s mt-4"
+                    value={recipeDetails}
+                    onChange={(e) => setRecipeDetails(e.target.value)}
+                    className=" size-9 w-auto text-center border-2 rounded-md p-2 mt-4"
                 />
             </CardBody>
         </Card>
